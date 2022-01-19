@@ -1,11 +1,21 @@
-<button id="server-start-button" >
-    サーバー起動
-</button>
-
+<body>
+    <button id="server-start-button" >
+        サーバー起動
+    </button>
+    <button id="server-stop-button" >
+        サーバー停止
+    </button>
+<body>
+    
 <script>
     document.getElementById("server-start-button").onclick = async function() {
         await fetch("https://32reu3vz2g.execute-api.ap-northeast-1.amazonaws.com/main", {
             method: "POST"
         });
     };
+    document.getElementById("server-start-button").onclick = async function() {
+        await fetch("https://32reu3vz2g.execute-api.ap-northeast-1.amazonaws.com/main/stop", {
+            method: "POST"
+        });
+    };    
 </script>
